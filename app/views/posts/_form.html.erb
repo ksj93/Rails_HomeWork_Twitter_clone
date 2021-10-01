@@ -3,6 +3,8 @@
     <%= form.label :content %>
     <%= form.text_field :content %>
   </div>
+  <p>1字以上、140字以内で記入してください</p>
 <%= form.submit %>
 <% end %>
-<%= link_to "Twitter一覧に戻る", posts_path %>
+<%= link_to "Twitter一覧に戻る", posts_path %><br>
+<%= link_to "トップページへ", posts_home_path %>
