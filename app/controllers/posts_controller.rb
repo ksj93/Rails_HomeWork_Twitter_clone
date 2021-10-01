@@ -2,6 +2,10 @@ class PostsController < ApplicationController
   before_action :set_post,only:[:show,:edit,:update,:destroy]
   def home
   end
+  def confirm
+    @post = Post.new(post_params)
+    render :new if @post.invalid?
+  end
   def index
     @posts = Post.all
   end
@@ -10,11 +14,16 @@ class PostsController < ApplicationController
   end
   def create
     @post =Post.create(post_params)
-    if @post.save
-      redirect_to posts_path, notice: "投稿完了"
-    else
+    if params[:back]
       render:new
+    else
+      if @post.save
+        redirect_to posts_path, notice: "投稿完了"
+      else
+        render:new
+      end
     end
+
   end
   def show
   end
