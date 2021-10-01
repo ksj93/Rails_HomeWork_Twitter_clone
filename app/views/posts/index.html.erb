@@ -8,7 +8,8 @@
   <tr>
     <td><%= post.content %></td>
     <td><%= link_to '詳細に見る', post_path(post.id) %></td>
-
+    <td><%= link_to '内容を修正', edit_post_path(post.id) %></td>
+    <td><%= link_to '内容を削除', post_path(post.id), method: :delete %></td>
   </tr>
 <% end %>
 </table>
