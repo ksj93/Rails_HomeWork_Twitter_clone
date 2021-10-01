@@ -9,4 +9,7 @@ class PostsController < ApplicationController
     @post =Post.create(content: params[:post][:content])
     render:new
   end
+  def show
+    @post = Post.find(params[:id])
+  end
 end
