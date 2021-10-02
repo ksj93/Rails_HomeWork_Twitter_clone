@@ -1,10 +1,12 @@
+<div class="common_form">
 <%= form_with(model: @post, local: true,url: choose_new_or_edit) do |form| %>
   <div class="post_content">
-    <%= form.label :content %>
-    <%= form.text_field :content %>
+    <p><%= form.label :content %></p>
+    <p class = "text_form"><%= form.text_field :content,size:"50x50" %></p>
   </div>
   <p>1字以上、140字以内で記入してください</p>
 <%= form.submit %>
 <% end %>
-<%= link_to "Twitter一覧に戻る", posts_path %><br>
-<%= link_to "トップページへ", posts_home_path %>
+</div>
+<tr ><p class = "menu"><%= link_to '一覧', posts_path %></p></tr><br>
+<tr ><p class = "menu"><%= link_to '新規投稿', new_post_path %></p></tr>

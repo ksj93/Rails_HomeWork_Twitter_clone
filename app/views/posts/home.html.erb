@@ -5,21 +5,22 @@
     <title>Twitter_clone</title>
   </head>
   <body>
-    <header>
-      <h1>Twitter Clone</h1>
-    </header>
-    <article class="link_to_page">
-      <!-- <img src="../assets/" alt=""> -->
-      <table>
-        <tr>
-          <th><%= link_to '一覧', posts_path %></th>
-          <td><%= link_to '新規投稿', new_post_path %></td>
-        </tr>
-      </table>
-    </article>
-    <footer>
-      <p>Homework.WEF2109</p>
-      <p>Kim sung joo</p>
-    </footer>
+    <div class="wrapper">
+      <header>
+        <h1>Twitter Clone</h1>
+      </header>
+      <article class="link_to_page">
+        <div class = "top_page_menu">
+          <img src="/assets/top_page.png" alt="" class="top_image">
+          <table>
+            <tr ><p class = "menu"><%= link_to '一覧', posts_path %></p></tr><br>
+            <tr ><p class = "menu"><%= link_to '新規投稿', new_post_path %></p></tr>
+          </table>
+        </div>
+      </article>
+      <footer>
+        <p>Homework.WEF2109<br>Kim sung joo</p>
+      </footer>
+    </div>
   </body>
 </html>

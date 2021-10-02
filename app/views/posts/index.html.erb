@@ -1,17 +1,37 @@
-<h1>Twetter list</h1>
-<p><%= notice %></p>
-<table>
-  <tr>
-    <th>内容</th>
-  </tr>
-<% @posts.each do |post| %>
-  <tr>
-    <td><%= post.content %></td>
-    <td><%= link_to '詳細に見る', post_path(post.id) %></td>
-    <td><%= link_to '内容を修正', edit_post_path(post.id) %></td>
-    <td><%= link_to '内容を削除', post_path(post.id), method: :delete %></td>
-  </tr>
-<% end %>
-</table>
-<%= link_to '新しく投稿する', new_post_path %><br>
-<%= link_to "トップページへ", posts_home_path %>
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Twitter_clone</title>
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1 class = "list_title">Twetter list</h1>
+      </header>
+      <article >
+        <div class ="list_index">
+          <p><%= notice %></p>
+          <table>
+            <tr>
+              <p class="table_head">内容</p>
+            </tr>
+          <% @posts.each do |post| %>
+            <tr class = "content_row">
+              <td class = "content"><%= post.content %></td>
+              <td class = "content_controll"><%= link_to '詳細', post_path(post.id) %></td>
+              <td class = "content_controll"><%= link_to '修正', edit_post_path(post.id) %></td>
+              <td class = "content_controll"><%= link_to '削除', post_path(post.id), method: :delete %></td>
+            </tr>
+          <% end %>
+          </table>
+          <p class="link_button"><%= link_to '新しく投稿', new_post_path %></p>
+          <p class="link_button"><%= link_to "トップページへ", posts_home_path %></p>
+        </div>
+      </article>
+      <footer>
+        <p>Homework.WEF2109<br>Kim sung joo</p>
+      </footer>
+    </div>
+  </body>
+</html>
